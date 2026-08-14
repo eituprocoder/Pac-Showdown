@@ -30,11 +30,11 @@ Points and Power Pellets regenerate continuously, so the action never stops.
 
 ---
 
-⏱️ 5 MINUTES OF CHAOS
+⏱️ 2 MINUTES OF CHAOS
 
 Each Showdown has a 5-minute time limit.
 
-But when only 1 minute remains...
+But when only 30 seconds remains...
 
 🚨 GLITCH 256 INVASION 🚨
 
@@ -128,7 +128,7 @@ Pac-Showdown is built as a 3D experience, with a third-person camera, a three-di
 
 10 players.
 
-5 minutes.
+2 minutes.
 
 One labyrinth.
 
