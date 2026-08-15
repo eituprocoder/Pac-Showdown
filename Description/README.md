@@ -32,7 +32,7 @@ Points and Power Pellets regenerate continuously, so the action never stops.
 
 ⏱️ 2 MINUTES OF CHAOS
 
-Each Showdown has a 5-minute time limit.
+Each Showdown has a 2-minute time limit.
 
 But when only 30 seconds remains...
 
@@ -57,7 +57,6 @@ The maze is inhabited by 8 different ghosts, each with their own unique behavior
 - 🟡 GOLDY — Wander
 - ⚪ WHITY — Flank
 
-Not all of them chase you the same way!
 
 ---
 
@@ -65,10 +64,10 @@ Not all of them chase you the same way!
 
 During the game, you can acquire different power-ups that change your strategy:
 
-- 🟡 POWER PELLET
-- 🟠 LASER
+- ✨️ POWER PELLET
+- 🧲 RANGE MAGNET
 - 🟢 SPEED BOOST
-- 🩵 GHOST FREEZE
+- 💎 x2 MULTIPLIER
 
 Using them at the right moment can completely change the outcome of the Showdown!
 
