@@ -1275,7 +1275,7 @@
                 }
             }
 
-            updateLobby3DModels();
+            updateLobby3DModels(); 
         }
 
         // --- MATCH START & TIMERS ---
@@ -1284,9 +1284,17 @@
             
             // Assign initial distinct spawn positions
             const spawnPoints = [
-                [-4, 20], [4, 20], [-12, 20], [12, 20],
-                [-4, -20], [4, -20], [-12, -20], [12, -20],
-                [0, 16], [0, -16]
+                // Pre-defined safe spawn locations (X, Y, Z) in open hallways
+    { x: 0,    y: 0.8, z: 32 },  // Bottom center
+    { x: -36,  y: 0.8, z: 32 },  // Bottom left
+    { x: 36,   y: 0.8, z: 32 },  // Bottom right
+    { x: -48,  y: 0.8, z: -24 }, // Top left
+    { x: 48,   y: 0.8, z: -24 }, // Top right
+    { x: -48,  y: 0.8, z: 24 },  // Lower outer left
+    { x: 48,   y: 0.8, z: 24 },  // Lower outer right
+    { x: -16,  y: 0.8, z: -52 }, // Top upper inner left
+    { x: 16,   y: 0.8, z: -52 }, // Top upper inner right
+    { x: 0,    y: 0.8, z: -24 }  // Top center corridor
             ];
             Object.values(players).forEach((p, idx) => {
                 const sp = spawnPoints[idx % spawnPoints.length];
