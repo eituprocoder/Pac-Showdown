@@ -146,7 +146,7 @@
         <div class="card-box" style="font-size:12px; line-height:1.4; color:#aaa;">
             <strong style="color:#00f2ff;">GAME CONTROLS & ABILITIES:</strong><br>
             • Movement: Joystick / WASD / Arrow Keys | Jump: Space / Jump Button.<br>
-            • ⚡ <strong>DASH ABILITY:</strong> Press Shift/E or Dash Button! Recharges every 6,500 Pts.<br>
+            • ⚡ <strong>DASH ABILITY:</strong> Press Shift/E or Dash Button! Recharges every 10,000 Pts.<br>
             • 🎭 <strong>5 3D REACTIONS:</strong> Press 1-5 or tap Reaction Bar (Scared, Happy, Angry, Sad, Laught)!<br>
             • Eat dots, center fruits & battle pellets (2x Mult & Magnet!).<br>
             • 🚨 <strong>30 SEC REMAINING: GLITCH 256</strong> shrinks the arena!
@@ -205,7 +205,7 @@
         <div id="timer-box">⏱️ <span id="match-timer">02:00</span></div>
         SCORE: <span id="score">0</span> | ALIVE: <span id="alive-count">0</span>/10<br>
         
-        <div id="dashBarContainer" class="bar-container"><div class="bar-label" id="dashBarLabel">DASH READY [1]</div><div id="dashBar"></div></div>
+        <div id="dashBarContainer" class="bar-container"><div class="bar-label" id="dashBarLabel">DASH [0/10000 PTS]</div><div id="dashBar"></div></div>
         <div id="powerBarContainer" class="bar-container"><div class="bar-label">POWER PELLET</div><div id="powerBar"></div></div>
         <div id="multBarContainer" class="bar-container"><div class="bar-label">2X MULTIPLIER</div><div id="multBar"></div></div>
         <div id="magnetBarContainer" class="bar-container"><div class="bar-label">MAGNET RANGE</div><div id="magnetBar"></div></div>
@@ -1812,12 +1812,12 @@
             let changedDots = [];
 
             Object.values(players).forEach(p => {
-                // Recharge Dash charge every 6,500 accumulated points
+                // Recharge Dash charge every 10,000 accumulated points
                 const ptsSinceLastDash = p.score - p.lastDashScore;
-                if (ptsSinceLastDash >= 6500) {
-                    const newCharges = Math.floor(ptsSinceLastDash / 6500);
+                if (ptsSinceLastDash >= 10000) {
+                    const newCharges = Math.floor(ptsSinceLastDash / 10000);
                     p.dashCharges += newCharges;
-                    p.lastDashScore += newCharges * 6500;
+                    p.lastDashScore += newCharges * 10000;
                     playSfx(1000, 0.3, 'triangle', 0.12);
                 }
 
@@ -2048,12 +2048,12 @@
             if (me) {
                 document.getElementById('score').innerText = me.score;
                 
-                // Dash Progress Bar (6,500 Pts Threshold)
+                // Dash Progress Bar (10,000 Pts Threshold)
                 const dashBar = document.getElementById('dashBar');
-                const ptsTowardsNextDash = me.score % 6500;
-                const dashPct = (ptsTowardsNextDash / 6500) * 100;
+                const ptsTowardsNextDash = me.score % 10000;
+                const dashPct = (ptsTowardsNextDash / 10000) * 100;
                 dashBar.style.width = (me.dashCharges > 0 ? 100 : dashPct) + '%';
-                document.getElementById('dashBarLabel').innerText = me.dashCharges > 0 ? `⚡ DASH READY [${me.dashCharges}]` : `⚡ DASH [${ptsTowardsNextDash}/6500 PTS]`;
+                document.getElementById('dashBarLabel').innerText = me.dashCharges > 0 ? `⚡ DASH READY [${me.dashCharges}]` : `⚡ DASH [${ptsTowardsNextDash}/10000 PTS]`;
 
                 document.getElementById('powerBarContainer').style.display = me.powerUp ? 'block' : 'none';
                 if (me.powerUp) document.getElementById('powerBar').style.width = (me.powerTimeLeft / 8000 * 100) + '%';
